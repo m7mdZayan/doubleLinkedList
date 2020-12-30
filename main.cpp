@@ -36,6 +36,23 @@ public:
         }
     }
 
+    void insertFront(int id,char name[]){
+
+    node* temp = new node;
+
+    temp->id = id;
+    strcpy(temp->name,name);
+
+    temp->next = head;
+    temp->prev = NULL;
+
+    head->prev = temp;
+
+
+    head = temp;
+
+    }
+
     void display(){
 
     node* temp = head;
@@ -127,6 +144,10 @@ int main()
 
      cout << ptr->name << endl;
      myList.deleteById(5);
+     myList.display();
+
+     cout << "-----" <<endl;
+     myList.insertFront(0,"Mahmoud");
      myList.display();
 
 
